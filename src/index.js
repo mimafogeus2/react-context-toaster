@@ -17,23 +17,6 @@ export const TOAST_TYPES = {
 }
 const CONTEXT_TOAST_NOTIFY_FUNC = 'ContextToastNotify'
 
-export function addContextToasterNotificationInterface(WrappedComponent) {
-  return class extends React.Component {
-    constructor(props) {
-      super(props)
-      const nextContextTypes = Object.assign(
-        {},
-        WrappedComponent.contextTypes,
-        { [CONTEXT_TOAST_NOTIFY_FUNC]: PropTypes.func.isRequired }
-      )
-      WrappedComponent.contextTypes = nextContextTypes
-    }
-    render() {
-      return <WrappedComponent {...this.props} />
-    }
-  }
-}
-
 class ContextToaster extends React.Component {
   constructor(props) {
     super(props)
@@ -99,7 +82,5 @@ ContextToaster.propTypes = {
     PropTypes.node
   ])
 }
-
-ContextToaster.addContextToasterNotificationInterface = addContextToasterNotificationInterface
 
 export default ContextToaster
