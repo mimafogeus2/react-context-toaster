@@ -55,9 +55,21 @@ var ContextToast = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      setTimeout(function () {
+      var showTimeoutId = setTimeout(function () {
         return _this2.setState({ isVisible: true });
       }, 0);
+      var hideTimeoutId = setTimeout(function () {
+        return _this2.setState({ isVisible: false });
+      }, this.props.lifetime);
+      var removeTimeoutId = setTimeout(this.props.removeToastFunc, this.props.lifetime + this.props.animationLength);
+      this.setState({ timeoutIds: [showTimeoutId, hideTimeoutId, removeTimeoutId] });
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.state.timeoutIds.forEach(function (tid) {
+        clearTimeout(tid);
+      });
     }
   }, {
     key: 'onClickFunc',
@@ -117,7 +129,7 @@ ContextToast.defaultProps = {
 };
 ContextToast.propTypes = {
   animationLength: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number,
-  children: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_1_react___default.a.PropTypes.node), __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.node]),
+  children: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.node), __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.node]),
   className: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
   closeOnClick: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.bool,
   lifetime: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number,
@@ -239,7 +251,7 @@ var ContextToaster = function (_React$Component) {
       var timestamp = new Date().getTime();
       var key = type + '_' + message + '_' + timestamp;
       var removeToastFunc = this.removeToast.bind(this, key);
-      var newToast = { title: title, message: message, type: type, className: className, key: key, lifetime: lifetime, removeToastFunc: removeToastFunc, closeOnClick: closeOnClick };
+      var newToast = { title: title, message: message, type: type, className: className, key: key, lifetime: lifetime, removeToastFunc: removeToastFunc, closeOnClick: closeOnClick, animationLength: animationLength };
       var nextToasts = this.state.toasts.concat(newToast);
       setTimeout(removeToastFunc, lifetime + animationLength);
       this.setState({ toasts: nextToasts });
@@ -259,6 +271,7 @@ var ContextToaster = function (_React$Component) {
             title: toast.title,
             key: toast.key,
             lifetime: toast.lifetime,
+            animationLength: toast.animationLength,
             type: toast.type,
             removeToastFunc: toast.removeToastFunc,
             closeOnClick: toast.closeOnClick
@@ -289,7 +302,7 @@ var ContextToaster = function (_React$Component) {
 ContextToaster.childContextTypes = _defineProperty({}, CONTEXT_TOAST_NOTIFY_FUNC, __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func);
 
 ContextToaster.propTypes = {
-  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PropTypes.node), __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node])
+  children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node), __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.node])
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ContextToaster);

@@ -39,7 +39,7 @@ class ContextToaster extends React.Component {
     const timestamp = (new Date()).getTime()
     const key = `${type}_${message}_${timestamp}`
     const removeToastFunc = this.removeToast.bind(this, key)
-    const newToast = { title, message, type, className, key, lifetime, removeToastFunc, closeOnClick }
+    const newToast = { title, message, type, className, key, lifetime, removeToastFunc, closeOnClick, animationLength }
     const nextToasts = this.state.toasts.concat(newToast)
     setTimeout(removeToastFunc, lifetime + animationLength)
     this.setState({ toasts: nextToasts })
@@ -53,6 +53,7 @@ class ContextToaster extends React.Component {
         title={toast.title}
         key={toast.key}
         lifetime={toast.lifetime}
+        animationLength={toast.animationLength}
         type={toast.type}
         removeToastFunc={toast.removeToastFunc}
         closeOnClick={toast.closeOnClick}
@@ -77,7 +78,7 @@ ContextToaster.childContextTypes = {
 
 ContextToaster.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ])
 }

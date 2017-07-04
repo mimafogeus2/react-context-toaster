@@ -12,7 +12,13 @@ class ContextToast extends React.Component {
     this.state = { isVisible: false }
   }
   componentDidMount() {
-    setTimeout(() => this.setState({ isVisible: true }), 0)
+    const showTimeoutId = setTimeout(() => this.setState({ isVisible: true }), 0)
+    const hideTimeoutId = setTimeout(() => this.setState({ isVisible: false }), this.props.lifetime)
+    const removeTimeoutId = setTimeout(this.props.removeToastFunc, this.props.lifetime + this.props.animationLength)
+    this.setState({ timeoutIds: [showTimeoutId, hideTimeoutId, removeTimeoutId] })
+  }
+  componentWillUnmount() {
+    this.state.timeoutIds.forEach((tid) => { clearTimeout(tid) })
   }
   onClickFunc() {
     if (this.props.closeOnClick) {
@@ -51,7 +57,7 @@ ContextToast.defaultProps = {
 ContextToast.propTypes = {
   animationLength: PropTypes.number,
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
   className: PropTypes.string,
