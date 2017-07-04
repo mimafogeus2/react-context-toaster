@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContextToaster, { addContextToasterNotificationInterface, TOAST_TYPES } from '../src/ContextToaster'
+import ContextToaster, { addContextToasterNotificationInterface, TOAST_TYPES } from '../src/index'
 
 const exampleContent = [
   'Hey!',
