@@ -1,21 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
 
-const CONTEXT_TOAST_NOTIFY_FUNC = 'ContextToastNotify'
+import { CONTEXT_TOAST_NOTIFY_FUNC_NAME } from './consts'
 
 export default function addContextToasterNotificationInterface(WrappedComponent) {
-  return class extends React.Component {
-    constructor(props) {
-      super(props)
-      const nextContextTypes = Object.assign(
-        {},
-        WrappedComponent.contextTypes,
-        { [CONTEXT_TOAST_NOTIFY_FUNC]: PropTypes.func.isRequired }
-      )
-      WrappedComponent.contextTypes = nextContextTypes
-    }
+  // eslint-disable-next-line react/display-name
+  return createReactClass({
+    componentWillMount() {
+      WrappedComponent[CONTEXT_TOAST_NOTIFY_FUNC_NAME] = this.context[CONTEXT_TOAST_NOTIFY_FUNC_NAME]
+    },
     render() {
-      return <WrappedComponent {...this.props} />
-    }
-  }
+      const propsWithToastFunc = Object.assign({}, this.props,
+        { [CONTEXT_TOAST_NOTIFY_FUNC_NAME]: this.context[CONTEXT_TOAST_NOTIFY_FUNC_NAME] }
+      )
+
+      return <WrappedComponent {...propsWithToastFunc} />
+    },
+    contextTypes: { [CONTEXT_TOAST_NOTIFY_FUNC_NAME]: PropTypes.func.isRequired }
+  })
 }

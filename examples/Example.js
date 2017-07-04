@@ -17,7 +17,7 @@ class ExampleChild extends React.Component {
     const typeValues = Object.values(TOAST_TYPES)
     const type = typeValues[Math.floor(Math.random() * typeValues.length)]
     const message = exampleContent[Math.floor(Math.random() * exampleContent.length)]
-    this.context.ContextToastNotify({ title: 'title', message, type })
+    this.props.popToast({ title: 'title', message, type })
   }
   render() {
     return <button onClick={this.notifyExample}>click</button>

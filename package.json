@@ -1,6 +1,6 @@
 {
   "name": "react-context-toaster",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/mimafogeus2/react-context-toaster.git"
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "create-react-class": "^15.6.0",
     "react": "^15.5.4",
     "react-cookie": "^1.0.5"
   },

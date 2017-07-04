@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ContextToast from './ContextToast'
+import { CONTEXT_TOAST_NOTIFY_FUNC_NAME } from './consts'
 import './contextToaster.css'
 
 const INITIAL_STATE = {
@@ -15,7 +16,6 @@ export const TOAST_TYPES = {
   SUCCESS: 'SUCCESS',
   WARN: 'WARN'
 }
-const CONTEXT_TOAST_NOTIFY_FUNC = 'ContextToastNotify'
 
 class ContextToaster extends React.Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class ContextToaster extends React.Component {
     this.setState({ toasts: nextToasts })
   }
   getChildContext() {
-    return { [CONTEXT_TOAST_NOTIFY_FUNC]: this.notify }
+    return { [CONTEXT_TOAST_NOTIFY_FUNC_NAME]: this.notify }
   }
   getToasts() {
     return this.state.toasts.map(toast =>
@@ -73,7 +73,7 @@ class ContextToaster extends React.Component {
 }
 
 ContextToaster.childContextTypes = {
-  [CONTEXT_TOAST_NOTIFY_FUNC]: PropTypes.func
+  [CONTEXT_TOAST_NOTIFY_FUNC_NAME]: PropTypes.func
 }
 
 ContextToaster.propTypes = {
