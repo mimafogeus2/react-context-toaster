@@ -30,7 +30,8 @@ class ContextToast extends React.Component {
     const toastClassNames = classnames({
       ContextToaster__Toast: true,
       'ContextToaster__Toast--visible': this.state.isVisible,
-      [`ContextToaster__Toast--${this.props.type.toUpperCase()}`]: !!this.props.type
+      [`ContextToaster__Toast--${this.props.type.toUpperCase()}`]: !!this.props.type,
+      [this.props.className]: !!this.props.className
     })
     return <li className={toastClassNames} onClick={this.onClickFunc}>
       <div className='ContentToaster__Toast__iconContainer' />
@@ -44,6 +45,7 @@ class ContextToast extends React.Component {
 ContextToast.defaultProps = {
   animationLength: 200,
   closeOnClick: true,
+  customClass: null,
   lifetime: 5000,
 }
 ContextToast.propTypes = {
@@ -52,6 +54,7 @@ ContextToast.propTypes = {
     PropTypes.arrayOf(React.PropTypes.node),
     PropTypes.node
   ]),
+  className: PropTypes.string,
   closeOnClick: PropTypes.bool,
   lifetime: PropTypes.number,
   title: PropTypes.string,
