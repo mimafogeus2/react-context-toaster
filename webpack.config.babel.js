@@ -6,6 +6,7 @@ const packageJson = require('./package.json');
 export default () => ({
     entry: {
         index: path.join(__dirname, 'src/index.js'),
+        addContextToasterNotificationInterface: path.join(__dirname, 'src/addContextToasterNotificationInterface.js')
     },
 
     output: {
