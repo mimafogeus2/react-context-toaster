@@ -1,0 +1,117 @@
+.ContextToaster__ToastsList {
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    left: 0;
+    margin: 0;
+    padding: 16px;
+    position: fixed;
+}
+
+.ContextToaster__Toast {
+    background-color: #424242;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    list-style: none;
+    margin-bottom: 8px;
+    opacity: 0;
+    transition: box-shadow 0.2s, opacity 0.2s, transform 0.2s;
+    transform: translateX(-150px);
+    width: 320px;
+}
+
+.ContextToaster__Toast:hover {
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.07);
+    transform: translateX(-150px) translateY(-2px);
+}
+
+.ContextToaster__Toast--visible {
+    opacity: 0.85;
+    transform: translateX(0);
+}
+
+.ContextToaster__Toast--visible:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.ContextToaster__Toast:last-child {
+    margin-bottom: 0
+}
+
+.ContentToaster__Toast__iconContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ContentToaster__Toast__iconContainer:before {
+    background-color: #fff;
+    border-radius: 18px;
+    color: #424242;
+    content: '🔔\FE0E';
+    display: block;
+    font-size: 24px;
+    height: 36px;
+    line-height: 34px;
+    margin: 0 8px 0 16px;
+    text-align: center;
+    width: 36px;
+}
+
+.ContextToaster__Toast__textContainer {
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.ContextToaster__Toast__textContainer__title {
+    font-size: 16px;
+    margin: 0;
+    padding: 16px 8px 0;
+}
+
+.ContextToaster__Toast__textContainer__textMessage {
+    margin: 0;
+    padding: 0 16px 16px 8px;
+}
+
+/* Types */
+.ContextToaster__Toast--NOTIFY {
+    background-color: #424242;
+}
+
+.ContextToaster__Toast--NOTIFY .ContentToaster__Toast__iconContainer:before {
+    color: #424242;
+    content: '🔔\FE0E';
+}
+
+.ContextToaster__Toast--ERROR {
+    background-color: #F44336;
+}
+
+.ContextToaster__Toast--ERROR .ContentToaster__Toast__iconContainer:before {
+    color: #F44336;
+    content: '✖\FE0E';
+}
+
+.ContextToaster__Toast--WARN {
+    background-color: #FFD600;
+}
+
+.ContextToaster__Toast--WARN .ContentToaster__Toast__iconContainer:before {
+    color: #FFD600;
+    content: '❗\FE0E';
+}
+
+.ContextToaster__Toast--SUCCESS {
+    background-color: #4CAF50;
+}
+
+.ContextToaster__Toast--SUCCESS .ContentToaster__Toast__iconContainer:before {
+    color: #4CAF50;
+    content: '✔\FE0E';
+}
