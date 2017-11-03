@@ -10,15 +10,15 @@
 })(this, function() {
 return webpackJsonpreact_context_toaster([1],{
 
-/***/ 22:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -142,16 +142,16 @@ ContextToast.propTypes = {
 
 /***/ }),
 
-/***/ 24:
+/***/ 25:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(31);
+var content = __webpack_require__(29);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(51)(content, {});
+var update = __webpack_require__(47)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -169,20 +169,20 @@ if(false) {
 
 /***/ }),
 
-/***/ 26:
+/***/ 27:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOAST_TYPES", function() { return TOAST_TYPES; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ContextToast__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__consts__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contextToaster_css__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ContextToast__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__consts__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contextToaster_css__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__contextToaster_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__contextToaster_css__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOAST_TYPES", function() { return TOAST_TYPES; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -309,22 +309,22 @@ ContextToaster.propTypes = {
 
 /***/ }),
 
-/***/ 31:
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(32)(undefined);
+exports = module.exports = __webpack_require__(30)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, ".ContextToaster__ToastsList {\r\n    bottom: 0;\r\n    display: flex;\r\n    flex-flow: column;\r\n    left: 0;\r\n    margin: 0;\r\n    padding: 16px;\r\n    position: fixed;\r\n}\r\n\r\n.ContextToaster__Toast {\r\n    background-color: #424242;\r\n    border-radius: 2px;\r\n    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);\r\n    display: flex;\r\n    font-family: Optima, Segoe, \"Segoe UI\", Candara, Calibri, Arial, sans-serif;\r\n    list-style: none;\r\n    margin-bottom: 8px;\r\n    opacity: 0;\r\n    transition: box-shadow 0.2s, opacity 0.2s, transform 0.2s;\r\n    transform: translateX(-150px);\r\n    width: 320px;\r\n}\r\n\r\n.ContextToaster__Toast--visible {\r\n    opacity: 0.85;\r\n    transform: translateX(0);\r\n}\r\n\r\n.ContextToaster__Toast--visible:hover {\r\n    opacity: 1;\r\n    transform: translateX(-6px);\r\n}\r\n\r\n.ContextToaster__Toast:last-child {\r\n    margin-bottom: 0\r\n}\r\n\r\n.ContentToaster__Toast__iconContainer {\r\n    align-items: center;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n\r\n.ContentToaster__Toast__iconContainer:before {\r\n    background-color: #fff;\r\n    border-radius: 18px;\r\n    color: #424242;\r\n    content: '\\1F514\\FE0E';\r\n    display: block;\r\n    font-size: 24px;\r\n    height: 36px;\r\n    line-height: 34px;\r\n    margin: 0 8px 0 16px;\r\n    text-align: center;\r\n    width: 36px;\r\n}\r\n\r\n.ContextToaster__Toast__textContainer {\r\n    color: #fff;\r\n    display: flex;\r\n    flex-flow: column;\r\n    justify-content: space-around;\r\n}\r\n\r\n.ContextToaster__Toast__textContainer__title {\r\n    font-size: 16px;\r\n    margin: 0;\r\n    padding: 16px 8px 0;\r\n}\r\n\r\n.ContextToaster__Toast__textContainer__textMessage {\r\n    margin: 0;\r\n    padding: 0 16px 16px 8px;\r\n}\r\n\r\n/* Types */\r\n.ContextToaster__Toast--NOTIFY {\r\n    background-color: #424242;\r\n}\r\n\r\n.ContextToaster__Toast--NOTIFY .ContentToaster__Toast__iconContainer:before {\r\n    color: #424242;\r\n    content: '\\1F514\\FE0E';\r\n}\r\n\r\n.ContextToaster__Toast--ERROR {\r\n    background-color: #F44336;\r\n}\r\n\r\n.ContextToaster__Toast--ERROR .ContentToaster__Toast__iconContainer:before {\r\n    color: #F44336;\r\n    content: '\\2716\\FE0E';\r\n}\r\n\r\n.ContextToaster__Toast--WARN {\r\n    background-color: #FFD600;\r\n}\r\n\r\n.ContextToaster__Toast--WARN .ContentToaster__Toast__iconContainer:before {\r\n    color: #FFD600;\r\n    content: '\\2757\\FE0E';\r\n}\r\n\r\n.ContextToaster__Toast--SUCCESS {\r\n    background-color: #4CAF50;\r\n}\r\n\r\n.ContextToaster__Toast--SUCCESS .ContentToaster__Toast__iconContainer:before {\r\n    color: #4CAF50;\r\n    content: '\\2714\\FE0E';\r\n}", ""]);
+exports.push([module.i, ".ContextToaster__ToastsList {\n    bottom: 0;\n    display: flex;\n    flex-flow: column;\n    left: 0;\n    margin: 0;\n    padding: 16px;\n    position: fixed;\n}\n\n.ContextToaster__Toast {\n    background-color: #424242;\n    border-radius: 2px;\n    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);\n    display: flex;\n    font-family: Optima, Segoe, \"Segoe UI\", Candara, Calibri, Arial, sans-serif;\n    list-style: none;\n    margin-bottom: 8px;\n    opacity: 0;\n    transition: box-shadow 0.2s, opacity 0.2s, transform 0.2s;\n    transform: translateX(-150px);\n    width: 320px;\n}\n\n.ContextToaster__Toast--visible {\n    opacity: 0.85;\n    transform: translateX(0);\n}\n\n.ContextToaster__Toast--visible:hover {\n    opacity: 1;\n    transform: translateX(-6px);\n}\n\n.ContextToaster__Toast:last-child {\n    margin-bottom: 0\n}\n\n.ContentToaster__Toast__iconContainer {\n    align-items: center;\n    display: flex;\n    justify-content: center;\n}\n\n.ContentToaster__Toast__iconContainer:before {\n    background-color: #fff;\n    border-radius: 18px;\n    color: #424242;\n    content: '\\1F514\\FE0E';\n    display: block;\n    font-size: 24px;\n    height: 36px;\n    line-height: 34px;\n    margin: 0 8px 0 16px;\n    text-align: center;\n    width: 36px;\n}\n\n.ContextToaster__Toast__textContainer {\n    color: #fff;\n    display: flex;\n    flex-flow: column;\n    justify-content: space-around;\n}\n\n.ContextToaster__Toast__textContainer__title {\n    font-size: 16px;\n    margin: 0;\n    padding: 16px 8px 0;\n}\n\n.ContextToaster__Toast__textContainer__textMessage {\n    margin: 0;\n    padding: 0 16px 16px 8px;\n}\n\n/* Types */\n.ContextToaster__Toast--NOTIFY {\n    background-color: #424242;\n}\n.ContextToaster__Toast--NOTIFY .ContentToaster__Toast__iconContainer:before {\n    color: #424242;\n    content: '\\2609\\FE0E';\n    line-height: 38px;\n}\n\n.ContextToaster__Toast--ERROR {\n    background-color: #F44336;\n}\n\n.ContextToaster__Toast--ERROR .ContentToaster__Toast__iconContainer:before {\n    color: #F44336;\n    content: '\\2716\\FE0E';\n}\n\n.ContextToaster__Toast--WARN {\n    background-color: #FFD600;\n}\n\n.ContextToaster__Toast--WARN .ContentToaster__Toast__iconContainer:before {\n    color: #FFD600;\n    content: '!\\FE0E';\n    font-size: 34px;\n    font-weight: bold;\n    line-height: 38px;\n    text-indent: 11px;\n}\n\n.ContextToaster__Toast--SUCCESS {\n    background-color: #4CAF50;\n}\n\n.ContextToaster__Toast--SUCCESS .ContentToaster__Toast__iconContainer:before {\n    color: #4CAF50;\n    content: '\\2714\\FE0E';\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -335,5 +335,5 @@ var CONTEXT_TOAST_NOTIFY_FUNC_NAME = 'popToast';
 
 /***/ })
 
-},[26]);
+},[27]);
 });
