@@ -78,10 +78,10 @@
 .ContextToaster__Toast--NOTIFY {
     background-color: #424242;
 }
-
 .ContextToaster__Toast--NOTIFY .ContentToaster__Toast__iconContainer:before {
     color: #424242;
-    content: '🔔\FE0E';
+    content: '☉\FE0E';
+    line-height: 38px;
 }
 
 .ContextToaster__Toast--ERROR {
@@ -99,7 +99,11 @@
 
 .ContextToaster__Toast--WARN .ContentToaster__Toast__iconContainer:before {
     color: #FFD600;
-    content: '❗\FE0E';
+    content: '!\FE0E';
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 38px;
+    text-indent: 11px;
 }
 
 .ContextToaster__Toast--SUCCESS {
